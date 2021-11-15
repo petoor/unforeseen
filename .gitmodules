@@ -1,6 +1,6 @@
 [submodule "server"]
 	path = server
-	url = git@github.com:petoor/sentinel-server.git
+	url = git@github.com:petoor/unforseen-server.git
 [submodule "client"]
 	path = client
-	url = git@github.com:petoor/sentinel-client.git
+	url = git@github.com:petoor/unforseen-client.git
