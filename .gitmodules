@@ -1,6 +1,3 @@
-[submodule "server"]
-	path = server
-	url = git@github.com:petoor/unforseen-server.git
-[submodule "client"]
-	path = client
-	url = git@github.com:petoor/unforseen-client.git
+[submodule "unforeseen-server"]
+	path = unforeseen-server
+	url = https://github.com/petoor/unforeseen-server
