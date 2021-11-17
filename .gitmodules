@@ -1,3 +1,6 @@
+[submodule "unforeseen-client"]
+	path = unforeseen-client
+	url = git@github.com:petoor/unforeseen-client.git
 [submodule "unforeseen-server"]
 	path = unforeseen-server
-	url = https://github.com/petoor/unforeseen-server
+	url = git@github.com:petoor/unforeseen-server.git
