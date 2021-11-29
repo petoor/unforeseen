@@ -19,6 +19,7 @@ analysis_icon = "./icons/analysis-128.png"
 machine_icon = "./icons/conveyor-128.png"
 cloud_icon = "./icons/cloud-128.png"
 camera_icon = "./icons/camera-128.png"
+cvat_icon = "./icons/cvat-128.png"
 
 graph_attr = {
     "fontsize": "25",
@@ -34,8 +35,8 @@ for outputformat in ["png"]:
             with Cluster("Server and monitoring"):
                 grafana = Grafana("Grafana")
                 influxdb = InfluxDB("InfluxDB")
-                prometheus = Prometheus("Prometheus")
-                user = User("User")	
+                prometheus = Prometheus("Prometheus")	
+                cvat = Custom("CVAT", cvat_icon)
 
         with Cluster("Unforeseen Client"):
             with Cluster("Image Analysis"):
@@ -46,21 +47,23 @@ for outputformat in ["png"]:
             with Cluster("Storage"):
                 cloud = Custom("Cloud Storage", cloud_icon)
                 local = Storage("Local Storage")
-                      
+         
+        user = User("User")               
         #with Cluster("Remote"):
         #    github = Github(f"{name} Reposotory \n Costumer Fork")
         #    ansible = Ansible("Ansible")
  
 
-            
+          
         output_machine << Edge(color="red",style="dotted",label="Machine output signal") << device
         influxdb >> grafana << user
         device >> camerafeed >>  grafana
         events >> Edge(label="Metrics") >> influxdb
         device >> events
         device >> events
-        device >> Edge(label="Metrics") >> prometheus
+        device >> prometheus
         prometheus >> grafana
+        user >> cvat
         #grafana << ansible
         #ansible << github
         
