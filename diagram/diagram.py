@@ -40,7 +40,7 @@ for outputformat in ["png"]:
 
         with Cluster("Unforeseen Client"):
             with Cluster("Image Analysis"):
-                device = Custom("Camera \n SBC", camera_icon)
+                device = Custom("SoC \n + Camera", camera_icon)
                 events = Custom("Image Analysis", analysis_icon)         
                 camerafeed = Server("Camera feed \n server")
 
