@@ -35,7 +35,6 @@ for outputformat in ["png"]:
             with Cluster("Server and monitoring"):
                 grafana = Grafana("Grafana")
                 influxdb = InfluxDB("InfluxDB")
-                prometheus = Prometheus("Prometheus")	
                 cvat = Custom("CVAT", cvat_icon)
 
         with Cluster("Unforeseen Client"):
@@ -61,8 +60,6 @@ for outputformat in ["png"]:
         events >> Edge(label="Metrics") >> influxdb
         device >> events
         device >> events
-        device >> prometheus
-        prometheus >> grafana
         user >> cvat
         #grafana << ansible
         #ansible << github
