@@ -2,7 +2,7 @@
 Unforeseen is an open source client–server model for computer vision applications.
 Unforeseen is meant to be robust and able to run on low cost SoC devices (Raspberry Pi / Jetson Nano), which makes it ideal for easy deployment in a production facility / manufacturing factory, or just for your vision DIY projects.
 
-All communication between the client and server is done via HTTP (except for remote camera calibration). This of course leaves some restrictions w.r.t e.g RTSP, however the HTTP protocol is chosen to make integration with prometheus and grafana seamless and to give the end user (whom might not be a computer expert) an easy way to access the data dashboard. See the diagram for a complete overview.
+All communication between the client and server is done via HTTP (except for remote camera calibration). This of course leaves some restrictions w.r.t e.g RTSP, however the HTTP protocol is chosen to make integration with grafana seamless and to give the end user (whom might not be a computer expert) an easy way to access the data dashboard. See the diagram for a complete overview.
 
 ![Unforeseen infrastructure](diagram/unforseen_infrastructure.png)
 
